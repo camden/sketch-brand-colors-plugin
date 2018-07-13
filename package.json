@@ -16,10 +16,14 @@
     "build": "skpm-build",
     "watch": "skpm-build --watch",
     "start": "skpm-build --watch --run",
+    "logs": "skpm log -f",
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
   },
-  "author": "Camden Bickel <bickelcb@amazon.com>"
+  "author": "Camden Bickel <bickelcb@amazon.com>",
+  "dependencies": {
+    "skpm": "^1.1.1"
+  }
 }

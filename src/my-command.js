@@ -8,7 +8,7 @@ export default function() {
     return;
   }
 
-  setSelectionColor('#ffaaaa');
+  setSelectionColor('#faaaaa');
 }
 
 // what is this for?
@@ -17,6 +17,17 @@ function setup() {
   if (!doc) {
     return false;
   }
+
+  // From plugin "super shapes"
+
+  // var Panel = NSPanel.alloc().init();
+  // Panel.setTitleVisibility(NSWindowTitleHidden);
+  // Panel.setTitlebarAppearsTransparent(true);
+  // Panel.standardWindowButton(NSWindowCloseButton).setHidden(false);
+  // Panel.standardWindowButton(NSWindowMiniaturizeButton).setHidden(true);
+  // Panel.standardWindowButton(NSWindowZoomButton).setHidden(true);
+  // Panel.setWorksWhenModal(true);
+  // NSApp.runModalForWindow(Panel);
 
   selection = doc.selectedLayers;
   if (!selection || selection.length == 0) {
