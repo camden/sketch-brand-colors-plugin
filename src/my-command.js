@@ -13,7 +13,9 @@ export default function() {
 
 // what is this for?
 function setup() {
+  log("testing yarn");
   const doc = Sketch.Document.getSelectedDocument();
+  log(doc);
   if (!doc) {
     return false;
   }

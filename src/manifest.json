@@ -6,6 +6,7 @@
     {
       "name": "Set color",
       "identifier": "set-color",
+      "shortcut": "ctrl shift q",
       "script": "./my-command.js"
     }
   ],
