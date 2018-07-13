@@ -3,8 +3,8 @@ import * as Sketch from 'sketch/dom';
 let selection;
 
 // Sketch entrypoint
-export default function(context) {
-  if (!setup(context)) {
+export default function() {
+  if (!setup()) {
     return;
   }
 
@@ -12,7 +12,7 @@ export default function(context) {
 }
 
 // what is this for?
-const setup = context => {
+function setup() {
   const doc = Sketch.Document.getSelectedDocument();
   if (!doc) {
     return false;
@@ -25,9 +25,10 @@ const setup = context => {
   }
 
   return true;
-};
+}
 
-const setSelectionColor = color => {
+// newish syntax "arrow function"
+function setSelectionColor(color) {
   selection.forEach(layer => {
     layer.style.fills = [
       {
@@ -36,6 +37,6 @@ const setSelectionColor = color => {
       },
     ];
   });
-};
+}
 
 const alert = msg => context.document.showMessage(msg);
