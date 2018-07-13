@@ -2,6 +2,7 @@ import * as Sketch from 'sketch/dom';
 
 let selection;
 
+// Sketch entrypoint
 export default function(context) {
   if (!setup(context)) {
     return;
