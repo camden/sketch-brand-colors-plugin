@@ -11,6 +11,7 @@ export default function(context) {
   setSelectionColor('#ffaaaa');
 }
 
+// what is this for?
 const setup = context => {
   const doc = Sketch.Document.getSelectedDocument();
   if (!doc) {
