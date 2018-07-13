@@ -3,26 +3,37 @@ import * as Sketch from 'sketch/dom';
 let selection;
 
 export default function(context) {
-  const doc = Sketch.Document.getSelectedDocument();
-  if (!doc) {
+  if (!setup(context)) {
     return;
   }
 
-  console.log('Doc: ', doc);
+  setSelectionColor('#ffaaaa');
+}
+
+const setup = context => {
+  const doc = Sketch.Document.getSelectedDocument();
+  if (!doc) {
+    return false;
+  }
+
   selection = doc.selectedLayers;
   if (!selection || selection.length == 0) {
     alert('Select a layer!');
-    return;
+    return false;
   }
 
+  return true;
+};
+
+const setSelectionColor = color => {
   selection.forEach(layer => {
     layer.style.fills = [
       {
         fill: Sketch.Style.FillType.Color,
-        color: '#fff000',
+        color: color,
       },
     ];
   });
-}
+};
 
 const alert = msg => context.document.showMessage(msg);

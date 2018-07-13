@@ -4,15 +4,13 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
+      "name": "Set color",
+      "identifier": "set-color",
       "script": "./my-command.js"
     }
   ],
   "menu": {
-    "title": "brand-colors-plugin",
-    "items": [
-      "my-command-identifier"
-    ]
+    "title": "Sketch Brand Colors",
+    "items": ["set-color"]
   }
 }
