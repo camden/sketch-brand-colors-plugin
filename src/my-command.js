@@ -2,7 +2,7 @@ import * as Sketch from 'sketch/dom';
 
 let selection;
 
-// Sketch entrypoint
+// Sketch entrypoint: checks that setup returns true, then passes in the color to the set selection color function
 export default function() {
   if (!setup()) {
     return;
@@ -11,10 +11,10 @@ export default function() {
   setSelectionColor('#faaaaa');
 }
 
-// what is this for?
+// This makes sure the document is there, and logs it so you can run 'yarn logs' in the terminal
 function setup() {
-  log("testing yarn");
   const doc = Sketch.Document.getSelectedDocument();
+  log("testing yarn");
   log(doc);
   if (!doc) {
     return false;
@@ -52,4 +52,5 @@ function setSelectionColor(color) {
   });
 }
 
+// what is this for?
 const alert = msg => context.document.showMessage(msg);
